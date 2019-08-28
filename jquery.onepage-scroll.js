@@ -7,21 +7,31 @@
         total = sections.length;
 
     $.fn.moveDown = function() {
-      el.moveTo(pos+1);
+      pos+=1;
+      el.transformPage();
     }
 
     $.fn.moveUp = function() {
-      el.moveTo(pos-1);
+      pos-=1;
+      el.transformPage();
     }
 
+    // the page_index starts with 1.
     $.fn.moveTo = function(page_index) {
-      if (page_index < 0 || total <= page_index) {
-        return;
+      pos = page_index - 1;
+      el.transformPage();
+    }
+
+    $.fn.transformPage = function() {
+      if (pos < 0) {
+        pos = 0;
       }
-      pos = page_index;
+      if (pos >= total) {
+        pos = total - 1;
+      }
       sections.each(function(sec_index, sec_element){
         $(sec_element).children("div").each(function(div_index, div_element){
-          if(page_index === sec_index) {
+          if(pos == sec_index) {
             $(div_element).removeClass("hidden");
           } else {
             $(div_element).addClass("hidden");

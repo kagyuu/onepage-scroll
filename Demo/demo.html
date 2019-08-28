@@ -17,7 +17,7 @@
         responsiveFallback: 600,
         loop: true
       });
-      $("#main").moveTo(0);
+      $("#main").moveTo(1);
 
       $(".btnPrev").click(function(){
         $("#main").moveUp();
@@ -32,21 +32,21 @@
 <body>
 	  <div id="main">	    
       <section class="page1">
-        <div class="hidden">
+        <div class="hidden" id="page1">
           page1<br/>
           <button class="btnPrev">prev</button>
           <button class="btnNext">next</button>
   	    </div>
       </section>
       <section class="page2">
-        <div class="hidden">
+        <div class="hidden" id="page2">
           page2<br/>
           <button class="btnPrev">prev</button>
           <button class="btnNext">next</button>
         </div>
       </section>
       <section class="page3">
-        <div class="hidden">
+        <div class="hidden" id="page3">
           page3<br/>
           <button class="btnPrev">prev</button>
           <button class="btnNext">next</button>
