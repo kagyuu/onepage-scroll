@@ -11,10 +11,14 @@
   <script>
 	  $(document).ready(function(){
       $("#main").onepage_scroll({
-        sectionContainer: "section",
-        responsiveFallback: 600,
-        loop: true
+        beforeMove : function(index) {
+          console.log("before move to page " + index);
+        },
+        afterMove : function(index) {
+          console.log("after move to page " + index);
+        }
       });
+
       $("#main").moveTo(1);
 
       $(".btnPrev").click(function(){
@@ -23,6 +27,10 @@
       
       $(".btnNext").click(function(){
         $("#main").moveDown();
+      });
+
+      $(".btnToId").click(function(){
+        $("#main").moveToId($(this).data("pageid"));
       });
 		});		
 	</script>
@@ -34,6 +42,10 @@
           page1<br/>
           <button class="btnPrev">prev</button>
           <button class="btnNext">next</button>
+          <br/>
+          <button class="btnToId" data-pageId="page1">1</button>
+          <button class="btnToId" data-pageId="page2">2</button>
+          <button class="btnToId" data-pageId="page3">3</button>
   	    </div>
       </section>
       <section class="page2">
@@ -41,6 +53,10 @@
           page2<br/>
           <button class="btnPrev">prev</button>
           <button class="btnNext">next</button>
+          <br/>
+          <button class="btnToId" data-pageId="page1">1</button>
+          <button class="btnToId" data-pageId="page2">2</button>
+          <button class="btnToId" data-pageId="page3">3</button>
         </div>
       </section>
       <section class="page3">
@@ -48,6 +64,10 @@
           page3<br/>
           <button class="btnPrev">prev</button>
           <button class="btnNext">next</button>
+          <br/>
+          <button class="btnToId" data-pageId="page1">1</button>
+          <button class="btnToId" data-pageId="page2">2</button>
+          <button class="btnToId" data-pageId="page3">3</button>
   	    </div>
       </section>
     </div>
