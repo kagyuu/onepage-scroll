@@ -5,7 +5,7 @@
 	<title>Simplified jQuery One Page Scroll</title>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="../jquery.onepage-scroll.js"></script>
-  <link rel="stylesheet" href="../jquery.onepage-scroll.css" type="text/css">
+  <link rel="stylesheet" href="../onepage-scroll.css" type="text/css">
   <style>
   </style>
   <script>
@@ -36,8 +36,19 @@
 	</script>
 </head>
 <body>
-	  <div id="main">	    
+    <div>
+      <!-- common header -->
+      <p style="float: right;">Simplified jquery-one-page plugin</p>
+    </div>
+    
+    <div id="main">	    
       <section class="page1">
+        <!-- individual header -->
+        <div class="hidden">
+          <h1>HEADER1</h1>
+          <hr>
+        </div>
+        <!-- individual body, it has page-id that one-page-scroll plugin seek. -->
         <div class="hidden" id="page1">
           page1<br/>
           <button class="btnPrev">prev</button>
@@ -49,6 +60,10 @@
   	    </div>
       </section>
       <section class="page2">
+        <div class="hidden">
+          <h1>HEADER2</h1>
+          <hr>
+        </div>
         <div class="hidden" id="page2">
           page2<br/>
           <button class="btnPrev">prev</button>
@@ -60,6 +75,10 @@
         </div>
       </section>
       <section class="page3">
+        <div class="hidden">
+          <h1>HEADER3</h1>
+          <hr>
+        </div>
         <div class="hidden" id="page3">
           page3<br/>
           <button class="btnPrev">prev</button>
@@ -71,6 +90,13 @@
   	    </div>
       </section>
     </div>
-  </div>
+    <div>
+    
+    <div>
+      <!-- common footer -->
+      <hr/>
+      <p style="text-align: center">Copyleft (&#x2184;) 2019 AHO Al Rights Re<strong>vers</strong>ed</p>
+    </div>
+    
 </body>
 </html>
